@@ -25,7 +25,7 @@ func Convert(fr io.Reader) ([]byte, error) {
 		}
 		result = append(result, item)
 	}
-	b, err := json.Marshal(result)
+	b, err := json.MarshalIndent(result, "", " ")
 	if err != nil {
 		return nil, err
 	}
